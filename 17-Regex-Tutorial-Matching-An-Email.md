@@ -18,9 +18,7 @@ A regular expression is a sequence of characters that defines a search pattern. 
 - [Grouping Constructs](#grouping-constructs)
 - [Bracket Expressions](#bracket-expressions)
 - [Character Classes](#character-classes)
-- [The OR Operator](#the-or-operator)
-- [Flags](#flags)
-- [Character Escapes](#character-escapes)
+- 
 
 ## Breakdown
 
@@ -40,7 +38,7 @@ Quick breakdown of each section of the regex: ```/^([a-z0-9_\.-]+)@([\da-z\.-]+)
 - **[ ]** Matches a single character that is contained within the brackets
 - **a-z** Character range of lowercase 'a' to lowercase 'z'
 - **0-9** Number range of '0' to '9'
-- **_\.-** Defines the special characters that are allowed in the string ` _ . - `
+```_\.-``` Defines the special characters that are allowed in the string ` _ . - `
 - **+** Match as much of the string as possible
 
 ```
@@ -57,7 +55,7 @@ Quick breakdown of each section of the regex: ```/^([a-z0-9_\.-]+)@([\da-z\.-]+)
 - **[ ]** Matches a single character that is contained within the brackets
 - **\d**  Matches a single characters that is a digit from 0-9
 - **a-z** Character range of lowercase 'a' to lowercase 'z'
-- **_\.-** Defines the special characters that are allowed in the string ` _ . - `
+```_\.-``` Defines the special characters that are allowed in the string ` _ . - `
 - **+** Match as much of the string as possible
 
 ```
@@ -85,24 +83,31 @@ $/.
 ## Regex Components
 
 ### Anchors
-The anchors used in this regex expression for matching an email are `^ `, which indicates the beginning of the string and `$`to indicate the ending of the string
+- The anchors used in this regex expression for matching an email are `^ `, which indicates the beginning of the string and `$`to indicate the ending of the string
 
 ### Quantifiers
 
 ### Grouping Constructs
- - `([a-z0-9_\.-]+)` that matches the user email name. 
- - `([\da-z\.-]+)` which will match the email service. 
- - `([a-z\.]{2,6})` to capture the `.com`.
+There are three grouping construtions in the regex, each being defined with the **( )**:
+ - `([a-z0-9_\.-]+)` Matches the user's email name,  `brianalegre`@gmail.com
+ - `([\da-z\.-]+)` Match the email provider, brianalegre@`gmail`.com
+ - `([a-z\.]{2,6})` Match the email provider's TLD, brianalegre@gmail.`com`
 
 ### Bracket Expressions
-Bracked expressios for email validation includes the character sets of `[a-z0-9_\.-]`, which is matching any letter a-z and is case senstive. It also matches a character 0-9 and matches the characters "_" , "-" , and "."; `[\da-z\.-]`, which is matching a single digit from 0-9, any lowercase character a-z, and the characters "." and "-".; `[a-z\.]` matches any lowercase character a-z and the character ".". 
+ - Bracked expressios for email validation includes the character sets of `[a-z0-9_\.-]`, which is matching any letter a-z and is case senstive. It also matches a character 0-9 and matches the characters "_" , "-" , and "."; `[\da-z\.-]`, which is matching a single digit from 0-9, any lowercase character a-z, and the characters "." and "-".; `[a-z\.]` matches any lowercase character a-z and the character ".". 
 
 ### Character Classes
-The character class in this expression is `\d`, which matches a single characters that is a digit from 0-9. It will only match a single digit such as "4", but not "44". 
+ - The character class in this expression is `\d`, which matches a single characters that is a digit from 0-9. It will only match a single digit such as "4", but not "44". 
 
 ### Greedy and Lazy Match
-This regrex includes greedy matches. Since it includes the `+` Quantifier, it will match as many times as possible giving back as needed. Another greedy Quantifier used in this regex is `{}` when matching `{2,6} for the last capture group.
-
+ - This regrex includes greedy matches. Since it includes the `+` Quantifier, it will match as many times as possible giving back as needed. Another greedy Quantifier used in this regex is `{}` when matching `{2,6} for the last capture group.
 
 ## Author
+ - Brian Alegre
+  - Github Username: brianalegre
+  - Github Link: https://github.com/brianalegre 
+
+## Questions
+Questions? Concerns?  Contact Me Below:
+- Email: brialegre@yahoo.com
 
