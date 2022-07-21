@@ -26,14 +26,57 @@ A regular expression is a sequence of characters that defines a search pattern. 
 
 | Syntax            |    Description                             |    Regex Component      |
 | :----:            |    :---                                      |          :----:         |
-|         /^                                                                               |
+|         **/^**                                                                               |
 | **/**             | Editor command for search                 |                           |
 | **^**             | Starting position within the string       |                           |
-|         ([a-z0-9_\.-]+)                                                                    |
+|         **([a-z0-9_\.-]+)**                                                                    |
 | **( )**  | Defines the scope | |
 | **[ ]** | Matches a single character that is contained within the brackets | [Grouping Constructs](#grouping-constructs)
 | **a-z** | Character range of lowercase 'a' to lowercase 'z' | 
 | **0-9** | Number range of '0' to '9' | 
+
+
+
+
+<table>
+    <tr>
+        <td>Syntax</td>
+        <td>Description</td>
+        <td>Regex Component</td>
+    </tr>
+     <tr>
+         <td colspan="3">/^</td>
+     </tr>
+    <tr>
+        <td>/</td>
+        <td>Editor command for search  </td>
+        <td>[Grouping Constructs](#grouping-constructs)</td>
+    </tr>
+    <tr>
+        <td>^</td>
+        <td>Starting position within the string  </td>
+        <td>[Grouping Constructs](#grouping-constructs)</td>
+    </tr>
+        <tr>
+         <td colspan="3">([a-z0-9_\.-]+)</td>
+     </tr>
+    <tr>
+        <td>( ) </td>
+        <td>Defines the scope </td>
+        <td>[Grouping Constructs](#grouping-constructs)</td>
+    </tr>
+    
+    
+</table>
+
+
+
+
+
+
+
+
+
 
 
 --------------------------------------------------------------------------------------------
@@ -50,6 +93,9 @@ A regular expression is a sequence of characters that defines a search pattern. 
 - **[ ]** Matches a single character that is contained within the brackets
 - **a-z** Character range of lowercase 'a' to lowercase 'z'
 - **0-9** Number range of '0' to '9'
+
+
+
 
 
     
