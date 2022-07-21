@@ -24,127 +24,85 @@ A regular expression is a sequence of characters that defines a search pattern. 
 
 ## Breakdown
 
-| Syntax            |    Description                             |    Regex Component      |
-| :----:            |    :---                                      |          :----:         |
-|         **/^**                                                                               |
-| **/**             | Editor command for search                 |                           |
-| **^**             | Starting position within the string       |                           |
-|         **([a-z0-9_\.-]+)**                                                                    |
-| **( )**  | Defines the scope | |
-| **[ ]** | Matches a single character that is contained within the brackets | [Grouping Constructs](#grouping-constructs)
-| **a-z** | Character range of lowercase 'a' to lowercase 'z' | 
-| **0-9** | Number range of '0' to '9' | 
+Quick breakdown of each section of the regex: ```/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/. ```
 
-
-
-
-<table>
-    <tr>
-        <td>Syntax</td>
-        <td>Description</td>
-        <td>Regex Component</td>
-    </tr>
-     <tr>
-         <td colspan="3">/^</td>
-     </tr>
-    <tr>
-        <td>/</td>
-        <td>Editor command for search  </td>
-        <td>[Grouping Constructs](#grouping-constructs)</td>
-    </tr>
-    <tr>
-        <td>^</td>
-        <td>Starting position within the string  </td>
-        <td>[Grouping Constructs](#grouping-constructs)</td>
-    </tr>
-        <tr>
-         <td colspan="3">([a-z0-9_\.-]+)</td>
-     </tr>
-    <tr>
-        <td>( ) </td>
-        <td>Defines the scope </td>
-        <td>[Grouping Constructs](#grouping-constructs)</td>
-    </tr>
-    
-    
-</table>
-
-
-
-
-
-
-
-
-
-
-
---------------------------------------------------------------------------------------------
 ```
 /^
 ```
-- **/**     Editor command for search
-- **^**     Starting position within the string
+- **/** Editor command for search
+- **^** Starting position within the string
 
 ```
 ([a-z0-9_\.-]+)
 ```
+- Defines the search pattern in the email `brianalegre`@gmail.com
 - **( )** Defines the scope
 - **[ ]** Matches a single character that is contained within the brackets
 - **a-z** Character range of lowercase 'a' to lowercase 'z'
 - **0-9** Number range of '0' to '9'
+- **_\.-** Defines the special characters that are allowed in the string ` _ . - `
+- **+** Match as much of the string as possible
 
+```
+@
+```
+- Defines the search pattern in the email brianalegre`@`gmail.com
+- **@** Matches the '@' in that placement of the search
 
+```
+([\da-z\.-]+)
+```
+- Defines the search pattern in the email brianalegre@`gmail`.com
+- **( )** Defines the scope
+- **[ ]** Matches a single character that is contained within the brackets
+- **\d**  Matches a single characters that is a digit from 0-9
+- **a-z** Character range of lowercase 'a' to lowercase 'z'
+- **_\.-** Defines the special characters that are allowed in the string ` _ . - `
+- **+** Match as much of the string as possible
 
+```
+\.
+```
+- Defines the search pattern in the email brianalegre@gmail`.`com
+- **\.** Matches the '.' in that placement of the search
 
+```
+([a-z\.]{2,6})
+```
+- Defines the search pattern in the email brianalegre@gmail.`com`
+- **( )** Defines the scope
+- **[ ]** Matches a single character that is contained within the brackets
+- **a-z** Character range of lowercase 'a' to lowercase 'z'
+- ```\.```  Defines the special characters that is allowed in the string ` . `
+- **{2,6}** Defines '2' to '6' characters 
 
-    
-    ```
-    ( )
-    ```
-        - Define the scope
-    
-    ```
-    [ ]
-    ```
-        - Matches a single character that is contained within the brackets
-    
-    ```
-    a-z
-    ```
-        - Character range of lowercase 'a' to lowercase 'z'
-    
-    ```
-    0-9
-    ```
-        - Number range of '0' to '9'
-  
-  
-   @
-   ([\da-z\.-]+)
-   \.
-   ([a-z\.]{2,6})
-   $/. 
-   ```
+```
+$/. 
+``` 
+**$/.** Ending position within the string
+
 
 ## Regex Components
 
 ### Anchors
+The anchors used in this regex expression for matching an email are `^ `, which indicates the beginning of the string and `$`to indicate the ending of the string
 
 ### Quantifiers
 
 ### Grouping Constructs
+ - `([a-z0-9_\.-]+)` that matches the user email name. 
+ - `([\da-z\.-]+)` which will match the email service. 
+ - `([a-z\.]{2,6})` to capture the `.com`.
 
 ### Bracket Expressions
+Bracked expressios for email validation includes the character sets of `[a-z0-9_\.-]`, which is matching any letter a-z and is case senstive. It also matches a character 0-9 and matches the characters "_" , "-" , and "."; `[\da-z\.-]`, which is matching a single digit from 0-9, any lowercase character a-z, and the characters "." and "-".; `[a-z\.]` matches any lowercase character a-z and the character ".". 
 
 ### Character Classes
+The character class in this expression is `\d`, which matches a single characters that is a digit from 0-9. It will only match a single digit such as "4", but not "44". 
 
-### The OR Operator
+### Greedy and Lazy Match
+This regrex includes greedy matches. Since it includes the `+` Quantifier, it will match as many times as possible giving back as needed. Another greedy Quantifier used in this regex is `{}` when matching `{2,6} for the last capture group.
 
-### Flags
-
-### Character Escapes
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
