@@ -18,7 +18,10 @@ A regular expression is a sequence of characters that defines a search pattern. 
 - [Grouping Constructs](#grouping-constructs)
 - [Bracket Expressions](#bracket-expressions)
 - [Character Classes](#character-classes)
-- 
+- [Greedy and Lazy Match](#greedy-and-lazy-match)
+- [Author](#author)
+- [Questions](#questions)
+
 
 ## Breakdown
 
@@ -62,7 +65,7 @@ Quick breakdown of each section of the regex: ```/^([a-z0-9_\.-]+)@([\da-z\.-]+)
 \.
 ```
 - Defines the search pattern in the email brianalegre@gmail`.`com
-- **\.** Matches the '.' in that placement of the search
+- ```\.``` Matches the '.' in that placement of the search
 
 ```
 ([a-z\.]{2,6})
@@ -72,7 +75,7 @@ Quick breakdown of each section of the regex: ```/^([a-z0-9_\.-]+)@([\da-z\.-]+)
 - **[ ]** Matches a single character that is contained within the brackets
 - **a-z** Character range of lowercase 'a' to lowercase 'z'
 - ```\.```  Defines the special characters that is allowed in the string ` . `
-- **{2,6}** Defines '2' to '6' characters 
+- **{2,6}** Defines '2' to '6' times
 
 ```
 $/. 
@@ -86,6 +89,7 @@ $/.
 - The anchors used in this regex expression for matching an email are `^ `, which indicates the beginning of the string and `$`to indicate the ending of the string
 
 ### Quantifiers
+- Quantifiers specify how many times a character, group, or character class must be present in the input for a match to be found.  Here the ```+``` represents one or more times and the ```{2,6}``` represent two to six times
 
 ### Grouping Constructs
 There are three grouping construtions in the regex, each being defined with the **( )**:
