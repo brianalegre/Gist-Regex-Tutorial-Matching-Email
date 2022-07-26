@@ -129,4 +129,4 @@ There are three grouping construtions in the regex, each being defined with the 
 
 Questions? Concerns? Contact Me Below:
 
-- Email: brialegre@yahoo.comƒ
+- Email: brialegre@yahoo.com
